@@ -62,6 +62,43 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-git非默认端口的问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/06/git非默认端口的问题/" class="article-date">
+  <time datetime="2019-08-06T01:47:12.000Z" itemprop="datePublished">2019-08-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/06/git非默认端口的问题/">git非默认端口的问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>因为服务器的22端口之前被人暴力破解过，所以把默认端口关了，改用其它端口ssh。<br>导致的问题：hexo deploy的时候，到一半卡住不动了。<br>问题排除：vi ~/.ssh/config<br>Port xxx #xxx为端口号<br>_config.yml内的deploy正常写就好了。<br>deploy:<br>  type: git<br>  repo: <a href="mailto:git@tubu.ml" target="_blank" rel="noopener">git@tubu.ml</a>:/home/git/blog.git<br>  branch: master</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/06/git非默认端口的问题/" data-id="cjyz66kcf0000nssqyek01xl1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-欢迎" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/06/欢迎/" class="article-date">
@@ -89,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/欢迎/" data-id="cjyym9r1g0001c68pq9oi9mg3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/06/欢迎/" data-id="cjyz66kd40002nssqkzexik63" class="article-share-link">Share</a>
       
       
     </footer>
@@ -131,7 +168,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/05/hello-world/" data-id="cjyym9r180000c68p8e9gujd5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/05/hello-world/" data-id="cjyz66kcu0001nssqlkxp1tpe" class="article-share-link">Share</a>
       
       
     </footer>
@@ -170,6 +207,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/08/06/git非默认端口的问题/">git非默认端口的问题</a>
+          </li>
         
           <li>
             <a href="/2019/08/06/欢迎/">欢迎</a>
