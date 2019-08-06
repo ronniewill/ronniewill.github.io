@@ -1,93 +1,97 @@
 <!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  
+<html lang>
+  <head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
-  <title>Hexo搭建轻量化个人博客 篇一：Mac本地安装 | 涂布</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写在前面的话通过这篇文章，你将学会以下知识点：  在本地Mac安装Hexo，建好一个可以通过localhost访问的网站 了解Hexo的基本操作">
-<meta name="keywords" content="Hexo">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hexo搭建轻量化个人博客 篇一：Mac本地安装">
-<meta property="og:url" content="https://tubu.ml/Hexo搭建轻量化个人博客 篇一：Mac本地安装/index.html">
-<meta property="og:site_name" content="涂布">
-<meta property="og:description" content="写在前面的话通过这篇文章，你将学会以下知识点：  在本地Mac安装Hexo，建好一个可以通过localhost访问的网站 了解Hexo的基本操作">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-06T05:43:59.939Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo搭建轻量化个人博客 篇一：Mac本地安装">
-<meta name="twitter:description" content="写在前面的话通过这篇文章，你将学会以下知识点：  在本地Mac安装Hexo，建好一个可以通过localhost访问的网站 了解Hexo的基本操作">
-  
-    <link rel="alternate" href="/atom.xml" title="涂布" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">涂布</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://tubu.ml"></form>
-      </div>
-    </div>
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="Hexo搭建轻量化个人博客 篇一：Mac本地安装"><meta name="keywords" content="Hexo, Mac, 荼布"><link rel="alternate" href="/default" title="荼布"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
+<link rel="canonical" href="https://tubu.ml/Hexo搭建轻量化个人博客 篇一：Mac本地安装/">
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css"><link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0">
+
+<script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true,"latex":false};
+</script>
+
+    <title>Hexo搭建轻量化个人博客 篇一：Mac本地安装 - 荼布</title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">荼布</a>
   </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">首页
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">荼布</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            首页
+            </a>
+        </li>
+      </ul></nav>
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-Hexo搭建轻量化个人博客 篇一：Mac本地安装" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/Hexo搭建轻量化个人博客 篇一：Mac本地安装/" class="article-date">
-  <time datetime="2019-08-05T16:31:52.000Z" itemprop="datePublished">2019-08-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Hexo搭建轻量化个人博客 篇一：Mac本地安装
-    </h1>
-  
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="写在前面的话"><a href="#写在前面的话" class="headerlink" title="写在前面的话"></a>写在前面的话</h3><p>通过这篇文章，你将学会以下知识点：</p>
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">Hexo搭建轻量化个人博客 篇一：Mac本地安装
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-08-06
+        </span><span class="post-category">
+            <a href="/categories/Hexo/">Hexo</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#写在前面的话"><span class="toc-text">写在前面的话</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本文目录"><span class="toc-text">本文目录</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-本地环境介绍："><span class="toc-text">1. 本地环境介绍：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-安装-Node-js"><span class="toc-text">2. 安装 Node.js</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-安装Hexo"><span class="toc-text">3. 安装Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-初始化Hexo"><span class="toc-text">4. 初始化Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-本地发布Hexo网站"><span class="toc-text">5. 本地发布Hexo网站</span></a></li></ol></li></ol>
+    </div>
+  </div><div class="post-content"><h3 id="写在前面的话"><a href="#写在前面的话" class="headerlink" title="写在前面的话"></a>写在前面的话</h3><p>通过这篇文章，你将学会以下知识点：</p>
 <ul>
 <li>在本地Mac安装Hexo，建好一个可以通过<a href="http://localhost:4000" target="_blank" rel="noopener">localhost</a>访问的网站</li>
 <li>了解Hexo的基本操作<a id="more"></a>
@@ -118,7 +122,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 
 <p>新建完成后，指定文件夹的目录如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── <span class="built_in">source</span></span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
 
 <p>至此，Hexo安装和初始化就基本完成了。接下来我们来发布一篇新文章：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"我的第一篇Hexo文章"</span> <span class="comment">#发部一篇名为我的第一篇文章的文章</span></span><br></pre></td></tr></table></figure>
@@ -128,140 +132,64 @@
 
 <p>好了，这一篇本地安装Hexo就到这里，下一篇我们将介绍如何将Hexo部署到Github实现外网访问。</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tubu.ml/Hexo搭建轻量化个人博客 篇一：Mac本地安装/" data-id="cjyzehqcm0002o3sq8l5obv6f" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/git非默认端口的问题/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          git非默认端口的问题
-        
       </div>
-    </a>
-  
-  
-    <a href="/Hello World/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-    </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://tubu.ml">Ruoyue</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://tubu.ml/Hexo搭建轻量化个人博客 篇一：Mac本地安装/">https://tubu.ml/Hexo搭建轻量化个人博客 篇一：Mac本地安装/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
   </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/Hexo/">Hexo</a>
+            <a href="/tags/Mac/">Mac</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/git非默认端口的问题/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">git非默认端口的问题</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
+      </main>
 
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/ahonn" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/Hexo搭建轻量化个人博客-篇二：将Hexo部署至github/">Hexo搭建轻量化个人博客 篇二：将Hexo部署至github</a>
-          </li>
-        
-          <li>
-            <a href="/Mac安装Homebrew/">Mac安装Homebrew</a>
-          </li>
-        
-          <li>
-            <a href="/git非默认端口的问题/">git非默认端口的问题</a>
-          </li>
-        
-          <li>
-            <a href="/Hexo搭建轻量化个人博客 篇一：Mac本地安装/">Hexo搭建轻量化个人博客 篇一：Mac本地安装</a>
-          </li>
-        
-          <li>
-            <a href="/Hello World/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 Ruoyue<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
+  <span class="copyright-year">&copy;2015 - 2019<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Ruoyue</span>
+  </span>
+</div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-  </div>
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
 </body>
 </html>
