@@ -85,16 +85,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>因为服务器的22端口之前被人暴力破解过，所以把默认端口关了，改用其它端口ssh。<br>导致的问题：hexo deploy的时候，到一半卡住不动了。<br>问题解决：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.ssh/config</span><br><span class="line">Port xxx <span class="comment">#xxx为端口号</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vi ~/.ssh/config</span><br><span class="line">Port xxx <span class="comment">#xxx为端口号</span></span><br></pre></td></tr></table></figure>
 
 <p>_config.yml内的deploy正常写就好了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vi _config.yml</span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: git@tubu.ml:/home/git/blog.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ vi _config.yml</span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: git@tubu.ml:/home/git/blog.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/git非默认端口的问题/" data-id="cjyz6cxdj0002r8sq7344oqh3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/06/git非默认端口的问题/" data-id="cjyz6mpn90001vesqgok11qnf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -131,7 +131,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/欢迎/" data-id="cjyz6cxdd0001r8sqc6ce49wf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/06/欢迎/" data-id="cjyz6mpne0002vesqgj8vw9y8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -173,7 +173,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/05/Hexo安装全过程/" data-id="cjyz6cxd40000r8sqz6x8j5ws" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/05/Hexo安装全过程/" data-id="cjyz6mpmy0000vesqo3pm1sgb" class="article-share-link">Share</a>
       
       
     </footer>
