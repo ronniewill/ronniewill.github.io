@@ -7,17 +7,17 @@
   
   <title>git非默认端口的问题 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="因为服务器的22端口之前被人暴力破解过，所以把默认端口关了，改用其它端口ssh。导致的问题：hexo deploy的时候，到一半卡住不动了。问题排除：vi ~/.ssh/configPort xxx #xxx为端口号_config.yml内的deploy正常写就好了。deploy:  type: git  repo: git@tubu.ml:/home/git/blog.git  branch:">
+  <meta name="description" content="因为服务器的22端口之前被人暴力破解过，所以把默认端口关了，改用其它端口ssh。导致的问题：hexo deploy的时候，到一半卡住不动了。问题解决： 12vi ~/.ssh/configPort xxx #xxx为端口号  _config.yml内的deploy正常写就好了。 12345vi _config.ymldeploy:  type: git  repo: git@tubu.ml:/ho">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git非默认端口的问题">
 <meta property="og:url" content="http://yoursite.com/2019/08/06/git非默认端口的问题/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="因为服务器的22端口之前被人暴力破解过，所以把默认端口关了，改用其它端口ssh。导致的问题：hexo deploy的时候，到一半卡住不动了。问题排除：vi ~/.ssh/configPort xxx #xxx为端口号_config.yml内的deploy正常写就好了。deploy:  type: git  repo: git@tubu.ml:/home/git/blog.git  branch:">
+<meta property="og:description" content="因为服务器的22端口之前被人暴力破解过，所以把默认端口关了，改用其它端口ssh。导致的问题：hexo deploy的时候，到一半卡住不动了。问题解决： 12vi ~/.ssh/configPort xxx #xxx为端口号  _config.yml内的deploy正常写就好了。 12345vi _config.ymldeploy:  type: git  repo: git@tubu.ml:/ho">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-06T01:52:57.159Z">
+<meta property="og:updated_time" content="2019-08-06T01:58:14.145Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git非默认端口的问题">
-<meta name="twitter:description" content="因为服务器的22端口之前被人暴力破解过，所以把默认端口关了，改用其它端口ssh。导致的问题：hexo deploy的时候，到一半卡住不动了。问题排除：vi ~/.ssh/configPort xxx #xxx为端口号_config.yml内的deploy正常写就好了。deploy:  type: git  repo: git@tubu.ml:/home/git/blog.git  branch:">
+<meta name="twitter:description" content="因为服务器的22端口之前被人暴力破解过，所以把默认端口关了，改用其它端口ssh。导致的问题：hexo deploy的时候，到一半卡住不动了。问题解决： 12vi ~/.ssh/configPort xxx #xxx为端口号  _config.yml内的deploy正常写就好了。 12345vi _config.ymldeploy:  type: git  repo: git@tubu.ml:/ho">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -86,12 +86,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>因为服务器的22端口之前被人暴力破解过，所以把默认端口关了，改用其它端口ssh。<br>导致的问题：hexo deploy的时候，到一半卡住不动了。<br>问题排除：vi ~/.ssh/config<br>Port xxx #xxx为端口号<br>_config.yml内的deploy正常写就好了。<br>deploy:<br>  type: git<br>  repo: <a href="mailto:git@tubu.ml" target="_blank" rel="noopener">git@tubu.ml</a>:/home/git/blog.git<br>  branch: master</p>
+        <p>因为服务器的22端口之前被人暴力破解过，所以把默认端口关了，改用其它端口ssh。<br>导致的问题：hexo deploy的时候，到一半卡住不动了。<br>问题解决：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.ssh/config</span><br><span class="line">Port xxx <span class="comment">#xxx为端口号</span></span><br></pre></td></tr></table></figure>
+
+<p>_config.yml内的deploy正常写就好了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vi _config.yml</span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: git@tubu.ml:/home/git/blog.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/git非默认端口的问题/" data-id="cjyz66kcf0000nssqyek01xl1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/06/git非默认端口的问题/" data-id="cjyz6cxdj0002r8sq7344oqh3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -148,7 +153,7 @@
           </li>
         
           <li>
-            <a href="/2019/08/05/hello-world/">Hello World</a>
+            <a href="/2019/08/05/Hexo安装全过程/">Hello World</a>
           </li>
         
       </ul>

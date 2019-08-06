@@ -84,12 +84,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>因为服务器的22端口之前被人暴力破解过，所以把默认端口关了，改用其它端口ssh。<br>导致的问题：hexo deploy的时候，到一半卡住不动了。<br>问题排除：vi ~/.ssh/config<br>Port xxx #xxx为端口号<br>_config.yml内的deploy正常写就好了。<br>deploy:<br>  type: git<br>  repo: <a href="mailto:git@tubu.ml" target="_blank" rel="noopener">git@tubu.ml</a>:/home/git/blog.git<br>  branch: master</p>
+        <p>因为服务器的22端口之前被人暴力破解过，所以把默认端口关了，改用其它端口ssh。<br>导致的问题：hexo deploy的时候，到一半卡住不动了。<br>问题解决：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.ssh/config</span><br><span class="line">Port xxx <span class="comment">#xxx为端口号</span></span><br></pre></td></tr></table></figure>
+
+<p>_config.yml内的deploy正常写就好了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vi _config.yml</span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: git@tubu.ml:/home/git/blog.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/git非默认端口的问题/" data-id="cjyz66kcf0000nssqyek01xl1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/06/git非默认端口的问题/" data-id="cjyz6cxdj0002r8sq7344oqh3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -126,7 +131,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/欢迎/" data-id="cjyz66kd40002nssqkzexik63" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/06/欢迎/" data-id="cjyz6cxdd0001r8sqc6ce49wf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -136,9 +141,9 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Hexo安装全过程" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/08/05/hello-world/" class="article-date">
+    <a href="/2019/08/05/Hexo安装全过程/" class="article-date">
   <time datetime="2019-08-05T15:52:43.083Z" itemprop="datePublished">2019-08-05</time>
 </a>
     
@@ -150,7 +155,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/05/hello-world/">Hello World</a>
+      <a class="article-title" href="/2019/08/05/Hexo安装全过程/">Hello World</a>
     </h1>
   
 
@@ -162,13 +167,13 @@
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
         
           <p class="article-more-link">
-            <a href="/2019/08/05/hello-world/#more">Read More</a>
+            <a href="/2019/08/05/Hexo安装全过程/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/05/hello-world/" data-id="cjyz66kcu0001nssqlkxp1tpe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/05/Hexo安装全过程/" data-id="cjyz6cxd40000r8sqz6x8j5ws" class="article-share-link">Share</a>
       
       
     </footer>
@@ -217,7 +222,7 @@
           </li>
         
           <li>
-            <a href="/2019/08/05/hello-world/">Hello World</a>
+            <a href="/2019/08/05/Hexo安装全过程/">Hello World</a>
           </li>
         
       </ul>
