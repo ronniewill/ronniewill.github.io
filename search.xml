@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Hexo搭建轻量化个人博客 篇三：将Hexo部署至VPS]]></title>
+    <url>%2FHexo%E6%90%AD%E5%BB%BA%E8%BD%BB%E9%87%8F%E5%8C%96%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-%E7%AF%87%E4%B8%89%EF%BC%9A%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E8%87%B3VPS.html</url>
+    <content type="text"><![CDATA[写在前面的话通过这篇文章，你将学会以下知识点： CentOS安装nginx 将本地建好的Hexo部署至VPS，通过自己注册的域名访问博客 本文目录 VPS环境介绍 CentOS安装Nginx 配置Nginx VPS安装Nodejs VPS安装Git以及相关配置 将本地Hexo部署至CentOS 1. VPS环境介绍12$ cat /etc/redhat-releaseCentOS Linux release 7.6.1810 (Core) 2. CentOS安装Nginx2.1 安装Nginx输入以下代码进行安装。 1$ yum install nginx -y 2.2 启动Nginx并设置开机自启。12$ systemctl start nginx #启动nginx$ systemctl enable nginx #开机启动 3. 配置Nginx12345678910111213141516171819202122232425262728293031323334353637383940414243444546$ vi /etc/nginx/nginx.confserver &#123; listen 80; server_name tubu.ml; #这里写上自己的域名 #charset koi8-r; #access_log logs/host.access.log main; location / &#123; root /var/www/blog; #这里修改为博客根目录 index index.html index.htm; &#125; #error_page 404 /404.html; # redirect server error pages to the static page /50x.html # error_page 500 502 503 504 /50x.html; location = /50x.html &#123; root /var/www/blog; #这里也要修改成博客根目录 &#125; # proxy the PHP scripts to Apache listening on 127.0.0.1:80 # #location ~ \.php$ &#123; # proxy_pass http://127.0.0.1; #&#125; # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000 # #location ~ \.php$ &#123; # root html; # fastcgi_pass 127.0.0.1:9000; # fastcgi_index index.php; # fastcgi_param SCRIPT_FILENAME /scripts$fastcgi_script_name; # include fastcgi_params; #&#125; # deny access to .htaccess files, if Apache's document root # concurs with nginx's one # #location ~ /\.ht &#123; # deny all; #&#125;&#125; 4. VPS安装Nodejs1$ yum install nodejs 用以下命令确认是否安装成功： 1$ node -v 5. VPS安装Git以及相关配置5.1 Git安装1$ yum install git 5.2 创建git用户以及设置密码12$ adduser git$ passwd git 5.3 修改git用户组1234$ vi /etc/sudoersroot ALL=(ALL) ALL #找到这行git ALL=(ALL) ALL #添加这行:wq! 强制保存退出 5.4 添加SSH Key文件新建~/.ssh/authorized_keys文件，把篇二生成的公钥复制粘贴到authorized_keys里面，:wq保存退出。 123$ su git$ mkdir ~/.ssh$ vim ~/.ssh/authorized_keys 设置文件权限 12$ chmod 600 ~/.ssh/authorized_keys$ chmod 700 ~/.ssh 本地运行以下命令测试是否能够成功连接。 1$ ssh -v git@Serverip #修改Serverip为你的VPS IP 5.5 新建blog文件夹服务器运行以下命令新建一个blog文件夹，用于Gig上传文件 12$ sudo mkdir -p /var/www/blog$ sudo chown -R git:git /var/www/blog 5.6 初始化git裸库切换到git用户，然后切换到git用户目录，接着初始化裸库，执行以下命令： 123$ su git$ cd /home/git$ git init --bare blog.git 新建post-receive文件 1234$ vi /home/git/blog.git/hooks/post-receive添加以下内容:wq退出#！/bin/shgit --work-tree=/var/www/blog --git-dir=/home/git/blog.git checkout -f 修改执行权限 1chmod +x ~/blog.git/hooks/post-receive 6. 将本地Hexo部署至CentOS回到本地，修改_config.yml文件(ssh默认端口不是22的看这里) 12345deploy: type: git repo: git@Serverip:/home/git/blog.git #修改Serverip为你的VPS IP branch: master message: 执行以下命令 1$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 这时访问 http://serverip 是不是就可以看到 Hexo 网站了。 结语至此，Hexo搭建轻量化个人博客系列就接近尾声了，感谢各位看官捧场。]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Github</tag>
+        <tag>CentOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo搭建轻量化个人博客 篇二：将Hexo部署至github]]></title>
+    <url>%2FHexo%E6%90%AD%E5%BB%BA%E8%BD%BB%E9%87%8F%E5%8C%96%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-%E7%AF%87%E4%BA%8C%EF%BC%9A%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E8%87%B3github.html</url>
+    <content type="text"><![CDATA[写在前面的话通过这篇文章，你将学会以下知识点： 注册gitbug，创建第一个repo 将本地建好的Hexo部署至github，通过 https://username.github.io 访问博客 进一了解Hexo的常用基本操作 本文目录 注册github并创建repo 本地环境介绍 本地安装Git 生成ssh公钥 将本地Hexo部署至github 常用命令 1. 注册github并创建repo使用邮箱注册好github账号，点击右上角的+/New Repository，Repository name填上自己github的username（一定要是username，不然没办法访问），最后点击Create Repository完成。创建好之后默认启用ssl，访问地址为：https://username.github.io 2. 本地环境介绍：PC: Macbook AirOS: MacOS 10.14 MojaveBrowser: Google Chrome 75.0.3770.142 3. 本地安装Git使用 Homebrew（Homebrew安装教程点这里）安装Git。 1$ brew install git 再来安装一个Git插件，如果你上一篇没安装的话： 1$ npm install hexo-deployer-git --save 配置git： 12$ git config --global user.name "GitHub username"$ git config --global user.email "GitHub mail" 4. 生成ssh公钥输入命令，然后一直回车就行了。12$ ssh-keygen -t rsa -C "GitHub mail" $ cat ~/.ssh/id_rsa.pub 将公钥复制，进github网站settings/SSH GPG keys/New SSH key，-&gt;粘帖-&gt;Add SSH key。 验证连接是否可用：1$ ssh -p 22 git@github.com 如果出现以下提示，则表示连接成功。 123PTY allocation request failed on channel 0Hi xxx! You&apos;ve successfully authenticated, but GitHub does not provide shell access.Connection to github.com closed. 5. 将本地Hexo部署至github12$ cd ~/blog$ vi _config.yml 修改最后deploy部分如下： 1234deploy: type: git repository: git@github.com:username/username.github.io.git #username为github用户名 branch: master 最后运行以下命令发布： 123$ hexo clean #清除缓存页面$ hexo g #生成静态页面 $ hexo d #发布至github 这时访问 https://username.github.io 是不是就可以看到 Hexo 网站了。 6. Hexo常用命令12345678hexo new &quot;name&quot; # 新建文章hexo new page &quot;name&quot; # 新建页面hexo g # 生成页面hexo d # 部署hexo g -d # 生成页面并部署hexo s # 本地预览hexo clean # 清除缓存和已生成的静态文件hexo help # 帮助 好了，这一篇将Hexo部署至github就到这里，下一篇我们将介绍如何将Hexo部署到远程vps。]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mac安装Homebrew]]></title>
+    <url>%2FMac%E5%AE%89%E8%A3%85Homebrew.html</url>
+    <content type="text"><![CDATA[Homebrew是啥？Linux系统有个让人蛋疼的通病，软件包依赖，好在当前主流的两大发行版本都自带了解决方案，Red hat(CentOS)有yum，Ubuntu(Debian)有apt-get。 但是Mac OS呢，不好意思Mac OS没有类似的库，泪奔中几经折腾总算找到了第三方支持：Homebrew，Homebrew简称brew，是Mac OSX上的软件包管理工具，能在Mac中方便的安装软件或者卸载软件，可以说Homebrew就是mac下的apt-get、yum神器。 Homebrew安装1/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot; 将以上命令粘贴至终端运行即可，更多操作请访问Homebrew官网。]]></content>
+      <categories>
+        <category>Mac</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+        <tag>Homebrew</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[git非默认端口的问题]]></title>
+    <url>%2Fgit%E9%9D%9E%E9%BB%98%E8%AE%A4%E7%AB%AF%E5%8F%A3%E7%9A%84%E9%97%AE%E9%A2%98.html</url>
+    <content type="text"><![CDATA[因为服务器的22端口之前被人暴力破解过，所以把默认端口关了，改用其它端口ssh。导致的问题：hexo deploy的时候，到一半卡住不动了。问题解决： 12$ vi ~/.ssh/configPort xxx #xxx为端口号 _config.yml内的deploy正常写就好了。 12345$ vi _config.ymldeploy: type: git repo: git@tubu.ml:/home/git/blog.git branch: master]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo搭建轻量化个人博客 篇一：Mac本地安装]]></title>
+    <url>%2FHexo%E6%90%AD%E5%BB%BA%E8%BD%BB%E9%87%8F%E5%8C%96%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20%E7%AF%87%E4%B8%80%EF%BC%9AMac%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85.html</url>
+    <content type="text"><![CDATA[写在前面的话通过这篇文章，你将学会以下知识点： 在本地Mac安装Hexo，建好一个可以通过localhost访问的网站 了解Hexo的基本操作 本文目录 本地环境介绍 安装node.js 安装Hexo 初始化Hexo 本地发布Hexo网站 1. 本地环境介绍：PC: Macbook AirOS: MacOS 10.14 MojaveBrowser: Google Chrome 75.0.3770.142 2. 安装 Node.jsMac下安装 Node.js 的最佳方式是使用 Homebrew（Homebrew安装教程点这里）。Brew: 1$ brew install node Wget: 1$ wget -qO- https://raw.github.com/creationix/nvm/v0.33.11/install.sh | sh 3. 安装Hexo使用 npm 完成 Hexo 的安装 1$ npm install -g hexo-cli 4. 初始化Hexo执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。 123$ hexo init blog$ cd blog$ npm install 再来安装一个Git插件，后面用Git部署的时候会用到： 1$ npm install hexo-deployer-git --save 新建完成后，指定文件夹的目录如下： 12345678.├── _config.yml├── package.json├── scaffolds├── source| ├── _drafts| └── _posts└── themes 至此，Hexo安装和初始化就基本完成了。接下来我们来发布一篇新文章： 1$ hexo new "我的第一篇Hexo文章" #发部一篇名为我的第一篇文章的文章 5. 本地发布Hexo网站执行以下命令，就能在localhost访问刚刚我们创建的这个博客了。 1$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo server 好了，这一篇本地安装Hexo就到这里，下一篇我们将介绍如何将Hexo部署到Github实现外网访问。]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+</search>
